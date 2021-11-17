@@ -61,7 +61,7 @@
                </div>
                <div class="content_card">
                   <h2>Produção anual</h2>
-                  <p>{empresas[0]} kg</p>
+                  <p>{empresas.prodAnual} kg</p>
                </div>
             </div>
             <div class="card">
@@ -70,7 +70,7 @@
                </div>
                <div class="content_card">
                   <h2>Número de empregados</h2>
-                  <p>{{empresas[1]}} Funcionários</p>
+                  <p>{{empresas.numFunc}} Funcionários</p>
                </div>
             </div>
             <div class="card">
@@ -115,20 +115,12 @@
                </tr>
             </thead>
             <tbody>
-
+               {% for produto in Produtos %}
                <tr>
-                  <td>Açucar</td>
-                  <td>160.976,600 toneladas</td>
+                  <td>{{produto.nome}}</td>
+                  <td>{{produto.quantia}}</td>
                </tr>
-               <tr>
-                  <td>Álcool</td>
-                  <td>123.039.934,000 litros de etanol</td>
-               </tr>
-               <tr>
-                  <td>Energia</td>
-                  <td>5.202,92 MW/h de energia</td>
-               </tr>
-
+               {% endfor %}
             </tbody>
          </table>
 

@@ -27,7 +27,7 @@
          <i class="fas fa-bars"></i>
       </label>
       <ul>
-         <li><a class="active" href="/autenticar">Inicio</a></li>
+         <li><a class="active" href="/home">Inicio</a></li>
 
          <li><a href="#produtos">Produtos</a></li>
 
@@ -36,7 +36,7 @@
 
       </ul>
    </nav>
-
+   {% for fiscais in Fiscal %}
    <div class="content">
       <section id=automacao class="informacao">
          <h1>Informações Fiscais</h1>
@@ -48,7 +48,7 @@
             </div>
             <div class="content_card">
                <h2>Incentivos fiscais recebidos</h2>
-               <p>1500KG.</p>
+               <p>{{fiscais.fclRcb}}</p>
             </div>
          </div>
          <div class="card">
@@ -57,7 +57,7 @@
             </div>
             <div class="content_card">
                <h2>Impostos municipais pagos </h2>
-               <p>90 Funcionários</p>
+               <p>{{fiscais.ImptMPago}}</p>
             </div>
          </div>
          <div class="card">
@@ -66,7 +66,7 @@
             </div>
             <div class="content_card">
                <h2>Impostos estaduais recolhidos</h2>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+               <p>{{fiscais.ImptEPago}}</p>
             </div>
          </div>
          <div class="card">
@@ -75,55 +75,12 @@
             </div>
             <div class="content_card">
                <h2>Impostos federais pagos </h2>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
-            </div>
-         </div>
-         <div class="card">
-            <div class="icon">
-               <ion-icon name="airplane-outline"></ion-icon>
-            </div>
-            <div class="content_card">
-               <h2>Taxas federais pagas </h2>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
+               <p>{{fiscais.ImptRPago}}</p>
             </div>
          </div>
       </div>
-      <!-- <div class="bemvindo">
-         <h1>{{ titulo }}</h1>
-      </div> -->
-      <div>
-      </div>
    </div>
-   <div>
-      <h1 id=produtos class="produtos">Produtos Produzidos </h1>
-      <table class="lista_produtos">
-         <thead>
-            <tr>
-               <th>Nome</th>
-               <th>Categoria</th>
-               <th>Console</th>
-            </tr>
-         </thead>
-         <tbody>
-            <!-- {% for jogo in jogos %}
-            <tr>
-               <td>{{ jogo.nome }}</td>
-               <td>{{ jogo.categoria }}</td>
-               <td>{{ jogo.console }}</td>
-            </tr>
-            {% endfor %} -->
-         </tbody>
-      </table>
-
-   </div>
-
-
-   </div>
-
-   </div>
-
-
-
+   {% endfor %}
 
    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

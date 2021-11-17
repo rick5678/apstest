@@ -7,11 +7,6 @@ app = Flask(__name__)
 app.secret_key = 'alura'
 
 
-class Produto:
-    def __init__(self, nome):
-        self.nome = nome
-
-
 class Usuario:
     def __init__(self, id, nome, senha, cargo):
         self.id = id
@@ -30,10 +25,10 @@ usuarios = {usuario1.id: usuario1,
 
 empresas = [empresa1, empresa2]
 
-produto1 = Produto('Açucar')
-produto2 = Produto('alcool')
-produto3 = Produto('energia')
 lista = [produto1, produto2, produto3]
+lista2 = [produto1, produto3]
+
+fiscais = [fiscal1, fiscal2]
 
 
 @app.route('/')
@@ -60,7 +55,7 @@ def login():
 @app.route('/fiscal')
 def fiscal():
     proxima = request.args.get('proxima')
-    return render_template('fiscal.html',)
+    return render_template('fiscal.html', Fiscal=fiscais)
 
 
 @app.route('/autenticar', methods=['POST', ])
@@ -75,7 +70,7 @@ def autenticar():
             flash(usuario.nome + ' logou com sucesso!')
             proxima_pagina = request.form['proxima']
             if usuario.cargo == '2':
-                return render_template('home.html', titulo=usuario.nome,  usuario=usuario, empresa=empresas)
+                return render_template('home.html', titulo=usuario.nome,  Produtos=lista, usuario=usuario, empresa=empresas)
             if usuario.cargo == '1':
                 return render_template('home.html', titulo=usuario.nome,  Produtos=lista, usuario=usuario, empresa=empresas)
         return redirect(proxima_pagina)
