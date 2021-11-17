@@ -1,0 +1,263 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+nav {
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: #1b1b1b;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 100px;
+  flex-wrap: wrap;
+}
+nav .logo {
+  color: #fff;
+  font-size: 35px;
+  font-weight: 600;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 5px;
+}
+nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+nav ul li a.active,
+nav ul li a:hover {
+  color: #111;
+  background: #fff;
+}
+nav .menu-btn i {
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
+}
+@media (max-width: 1000px) {
+  nav {
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i {
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before {
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #111;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul {
+    left: 0;
+  }
+  nav ul li {
+    width: 100%;
+    margin: 40px 0;
+  }
+  nav ul li a {
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a {
+    margin-left: 0px;
+  }
+  nav ul li a.active,
+  nav ul li a:hover {
+    background: none;
+    color: cyan;
+  }
+}
+.content {
+  position: absolute;
+
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.produtora {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #000000;
+}
+
+.produtos {
+  position: absolute;
+  top: 160%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.lista_produtos {
+  position: absolute;
+  top: 178%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+
+.informacao {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.informacao div {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.container {
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px;
+}
+.card {
+  position: relative;
+  
+  width: 320px;
+  height: 450px;
+  margin: 30px;
+  background: #287bff;
+  border-radius: 28px;
+  border-bottom-left-radius: 160px;
+  border-bottom-right-radius: 160px;
+  box-shadow: 0 15px 0 #fff, inset 0 -15px 0 rgba(255, 255, 255, 0.25),
+    0 45px 0 rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  top: -140px;
+  left: -40%;
+  width: 100%;
+  height: 120%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+  transform: rotate(35deg);
+  pointer-events: none;
+  filter: blur(5px);
+}
+.card:nth-child(1) {
+  background: linear-gradient(to bottom, #020500, #07550e);
+}
+.card:nth-child(2) {
+  background: linear-gradient(to bottom, #020500, #07550e);
+}
+.card:nth-child(3) {
+  background: linear-gradient(to bottom, #020500, #07550e);
+}
+.card:nth-child(4) {
+  background: linear-gradient(to bottom, #020500, #07550e);
+}
+.card:nth-child(5) {
+  background: linear-gradient(to bottom, #020500, #07550e);
+}
+.icon {
+  position: relative;
+  justify-content: center;
+  width: 140px;
+  height: 120px;
+  background: #000000;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1) inset 0 -8px 0 #fff;
+  z-index: 1000;
+  justify-content: center;
+}
+
+.icon ion-icon {
+  color: #fff;
+  position: relative;
+  font-size: 2em;
+  z-index: 1000;
+  --ionicon-stroke-width: 24px;
+}
+
+.content_card {
+  position: absolute;
+  width: 100%;
+  padding: 30px;
+  padding-top: 140px;
+  text-align: center;
+}
+
+.content_card h2 {
+  font-size: 0.65em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.content_card p {
+  color: #fff;
+  line-height: 1.5em;
+  font-size: 0.45em;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <section class="side">
+        <img src="./images/img.svg" alt="">
+    </section>
+
+    <section class="main">
+        <div class="login-container">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul id="messages" class="list-unstyled">
+                {% for message in messages %}
+                <li class="alert alert-success">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            <p class="title">Login</p>
+            <div class="separator"></div>
+            <p class="welcome-message">Por favor, faça o login para acessa o painel</p>
+            <form class="login-form" method="POST" action="{{ url_for('autenticar') }}">
+                <div class="form-control">
+                    <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
+                    <input type="text" placeholder="Username" name="usuario">
+                    <i class="fas fa-user"></i>
+                </div>
+
+                <div class="form-control">
+                    <input type="file" name="senha" placeholder="biometria" accept="image/png, image/gif, image/jpeg" />
+                    <i class="fas fa-lock"></i>
+                </div>
+
+                <button class="submit" type="submit">Login</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+
+</html>

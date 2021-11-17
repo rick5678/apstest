@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <title>Ambiente</title>
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+   <link rel="stylesheet" href="../static/home.css">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+   <nav>
+      <div class="logo">
+         Ambiente
+      </div>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+         <li><a class="active" href="#">Inicio</a></li>
+         <li><a href="#automacao">Automação</a></li>
+         <li><a href="#produtos">Produtos</a></li>
+         {% if usuario.cargo == '2' %}
+         <li><a href="/fiscal">Informações Fiscais</a></li>
+         {% if usuario.nivel == '3' %}
+         <li><a href="/fiscal">Agrotóxicos</a></li>
+         {% endif %}
+         {% else %}
+         {% endif %}
+
+      </ul>
+   </nav>
+   {% for empresas in empresa %}
+   <div class="container-for">
+      <div class="produtora">
+         <h1>{{empresas.produtora}}</h1>
+         <h1>{{empresas.endereco}}</h1>
+      </div>
+
+      <div class="content">
+         <section id=automacao class="informacao">
+
+            <h1>Informações da Empresa</h1>
+            <p>
+               A Unidade Produtora Ambiental é uma empresa de produção de produtos ambientais, com foco na produção de
+               produtos agrícolas, agroindustriais e agrotóxicos.
+            </p>
+
+         </section>
+         <div class="container">
+            <div class="card">
+               <div class="icon">
+                  <ion-icon name="clipboard-outline"></ion-icon>
+               </div>
+               <div class="content_card">
+                  <h2>Produção anual</h2>
+                  <p>{empresas[0]} kg</p>
+               </div>
+            </div>
+            <div class="card">
+               <div class="icon">
+                  <ion-icon name="person-outline"></ion-icon>
+               </div>
+               <div class="content_card">
+                  <h2>Número de empregados</h2>
+                  <p>{{empresas[1]}} Funcionários</p>
+               </div>
+            </div>
+            <div class="card">
+               <div class="icon">
+                  <ion-icon name="airplane-outline"></ion-icon>
+               </div>
+               <div class="content_card">
+                  <h2>Destino da produção</h2>
+                  <p>{{empresas.destProd}}</p>
+               </div>
+            </div>
+            <div class="card">
+               <div class="icon">
+                  <ion-icon name="airplane-outline"></ion-icon>
+               </div>
+               <div class="content_card">
+                  <h2>Quantidade máquinas</h2>
+                  <p>{{empresas.qntMaq}}</p>
+               </div>
+            </div>
+            <div class="card">
+               <div class="icon">
+                  <ion-icon name="airplane-outline"></ion-icon>
+               </div>
+               <div class="content_card">
+                  <h2>Nivel de Automação</h2>
+                  <p>{{empresas.nvlAuto}}</p>
+               </div>
+            </div>
+         </div>
+         <div>
+         </div>
+      </div>
+      <div>
+         <h1 id=produtos class="produtos">Produtos Produzidos </h1>
+         <table class="lista_produtos">
+            <thead>
+               <tr>
+                  <th>Nome</th>
+                  <th>Quantidade</th>
+
+               </tr>
+            </thead>
+            <tbody>
+
+               <tr>
+                  <td>Açucar</td>
+                  <td>160.976,600 toneladas</td>
+               </tr>
+               <tr>
+                  <td>Álcool</td>
+                  <td>123.039.934,000 litros de etanol</td>
+               </tr>
+               <tr>
+                  <td>Energia</td>
+                  <td>5.202,92 MW/h de energia</td>
+               </tr>
+
+            </tbody>
+         </table>
+
+      </div>
+   </div>
+   {% endfor %}
+
+   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+
+</body>
+
+
+</html>
