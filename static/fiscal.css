@@ -103,7 +103,6 @@ input[type="checkbox"] {
 
   top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   z-index: -1;
   width: 100%;
@@ -121,7 +120,6 @@ input[type="checkbox"] {
   justify-content: space-between;
   top: 10%;
   left: 50%;
-  transform: translate(-50%, -50%);
   text-align: left;
   z-index: -1;
   width: 100%;
@@ -133,7 +131,6 @@ input[type="checkbox"] {
   position: absolute;
   top: 160%;
   left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   z-index: -1;
   width: 100%;
@@ -144,7 +141,6 @@ input[type="checkbox"] {
   position: absolute;
   top: 178%;
   left: 60%;
-  transform: translate(-50%, -50%);
   text-align: center;
   z-index: -1;
   width: 100%;
@@ -156,7 +152,6 @@ input[type="checkbox"] {
   position: absolute;
   top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   z-index: -1;
   width: 100%;

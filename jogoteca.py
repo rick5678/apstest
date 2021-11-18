@@ -30,15 +30,12 @@ lista2 = [produto1, produto3]
 
 fiscais = [fiscal1, fiscal2]
 
-
 @app.route('/')
 def index():
-    return render_template('login.html', titulo='Agrotoxicos', Produtos=lista)
+    return render_template('login.html', titulo='Agrotoxicos')
 
 
-@app.route('/home')
-def home():
-    return render_template('home.html', empresa=empresas)
+
 
 
 @app.route('/novo')
@@ -58,7 +55,7 @@ def fiscal():
     return render_template('fiscal.html', Fiscal=fiscais)
 
 
-@app.route('/autenticar', methods=['POST', ])
+@app.route('/autenticar', methods=['POST', 'GET'])
 def autenticar():
     if request.form['usuario'] in usuarios:
         usuario = usuarios[request.form['usuario']]

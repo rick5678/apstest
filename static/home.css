@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 .container-for{
   height: auto;
   width: auto;
@@ -19,6 +20,7 @@ nav {
   padding: 0 50px 0 100px;
   flex-wrap: wrap;
 }
+
 nav .logo {
   color: #fff;
   font-size: 35px;
@@ -29,6 +31,7 @@ nav ul {
   flex-wrap: wrap;
   list-style: none;
 }
+
 nav ul li {
   margin: 0 5px;
 }
@@ -42,6 +45,7 @@ nav ul li a {
   letter-spacing: 1px;
   transition: all 0.3s ease;
 }
+
 nav ul li a.active,
 nav ul li a:hover {
   color: #111;
@@ -53,14 +57,17 @@ nav .menu-btn i {
   cursor: pointer;
   display: none;
 }
+
 input[type="checkbox"] {
   display: none;
 }
+
 @media (max-width: 1000px) {
   nav {
     padding: 0 40px 0 50px;
   }
 }
+
 @media (max-width: 920px) {
   nav .menu-btn i {
     display: block;
@@ -68,6 +75,7 @@ input[type="checkbox"] {
   #click:checked ~ .menu-btn i:before {
     content: "\f00d";
   }
+
   nav ul {
     position: fixed;
     top: 80px;
@@ -79,13 +87,16 @@ input[type="checkbox"] {
     display: block;
     transition: all 0.3s ease;
   }
+
   #click:checked ~ ul {
     left: 0;
   }
+
   nav ul li {
     width: 100%;
     margin: 40px 0;
   }
+
   nav ul li a {
     width: 100%;
     margin-left: -100%;
@@ -102,65 +113,67 @@ input[type="checkbox"] {
     color: cyan;
   }
 }
-.content {
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+.content { 
+  top: 0%;
+  left: 20%;
   text-align: center;
   z-index: -1;
   width: 100%;
   padding: 0 30px;
   color: #1b1b1b;
 }
+
 .content div {
   font-size: 40px;
   font-weight: 700;
 }
 
+
+.produtos {
+  top: 160%;
+  left: 50%;
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+
+.lista_produtos {
+  top: 178%;
+  left: 59%;
+  text-align: center;
+  
+  text-size-adjust: 20px;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+
 .produtora {
-  display: flex;
+  display: inline;
   justify-content: space-between;
   top: 15%;
   left: 50%;
-  transform: translate(-50%, -50%);
   text-align: left;
   z-index: -1;
   width: 100%;
   padding: 0 30px;
   color: #000000;
-}
-
-.produtos {
-  top: 160%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: -1;
-  width: 100%;
-  padding: 0 30px;
-  color: #1b1b1b;
-}
-.lista_produtos {
-  top: 178%;
-  left: 59%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: -1;
-  width: 100%;
-  padding: 0 30px;
-  color: #1b1b1b;
+  
 }
 
 .informacao {
   top: 150%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 50%; 
   text-align: center;
   z-index: -1;
   width: 100%;
   padding: 0 30px;
   color: #1b1b1b;
 }
+
 .informacao div {
   font-size: 40px;
   font-weight: 700;
@@ -175,7 +188,6 @@ input[type="checkbox"] {
 }
 .card {
   position: relative;
-  
   width: 320px;
   height: 450px;
   margin: 30px;
@@ -186,10 +198,11 @@ input[type="checkbox"] {
   box-shadow: 0 15px 0 #fff, inset 0 -15px 0 rgba(255, 255, 255, 0.25),
     0 45px 0 rgba(0, 0, 0, 0.15);
   overflow: hidden;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
-  align-items: flex-start;
+  
 }
+
 .card::before {
   content: "";
   top: -140px;
@@ -204,6 +217,7 @@ input[type="checkbox"] {
 .card:nth-child(1) {
   background: linear-gradient(to bottom, #020500, #07550e);
 }
+
 .card:nth-child(2) {
   background: linear-gradient(to bottom, #020500, #07550e);
 }
@@ -216,6 +230,7 @@ input[type="checkbox"] {
 .card:nth-child(5) {
   background: linear-gradient(to bottom, #020500, #07550e);
 }
+
 .icon {
   position: relative;
   justify-content: center;
