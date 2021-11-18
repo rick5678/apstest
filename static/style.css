@@ -19,8 +19,8 @@ section {
     align-items: center;
 }
 
-section.side {
-    background: url(../static/bk.png) no-repeat;
+.bg-image {
+    background: url(./../background.jpg) no-repeat;
     background-size: 100% 102%;
 }
 

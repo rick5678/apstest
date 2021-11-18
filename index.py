@@ -6,6 +6,9 @@ from infoEmpresa import *
 app = Flask(__name__)
 app.secret_key = 'alura'
 
+class Agrotoxico:
+    def __init__(self, nome):
+        self.nome = nome
 
 class Usuario:
     def __init__(self, id, nome, senha, cargo):
@@ -14,28 +17,27 @@ class Usuario:
         self.senha = senha
         self.cargo = cargo
 
-
-usuario1 = Usuario('gustavo', 'Gustavo', cv2.imread('digital.jpg'), '2')
-usuario2 = Usuario('arion', 'Arion', '1234', '2')
-usuario3 = Usuario('henrique', 'Henrique', '1234', 'CLI')
+usuario1 = Usuario('gustavo', 'Gustavo', cv2.imread('digital.jpg'), '3')
+usuario2 = Usuario('arion', 'Arion',  cv2.imread('digital2.jpg'), '2')
+usuario3 = Usuario('henrique', 'Henrique',  cv2.imread('digital3.jpg'), '3')
 
 usuarios = {usuario1.id: usuario1,
             usuario2.id: usuario2,
             usuario3.id: usuario3}
 
-empresas = [empresa1, empresa2]
+empresas = [empresa1, empresa2, empresa3, empresa4, empresa5]
 
-lista = [produto1, produto2, produto3]
-lista2 = [produto1, produto3]
+produtos = [lista, lista2, lista3, lista4, lista5]
 
-fiscais = [fiscal1, fiscal2]
+fiscais = [fiscal1, fiscal2, fiscal3, fiscal4, fiscal5]
 
-@app.route('/')
-def index():
-    return render_template('login.html', titulo='Agrotoxicos')
+agrotoxico1 = Agrotoxico('Não sei')
+listaagro = [agrotoxico1]
 
-
-
+@app.route('/agrotoxicos')
+def agrotoxicos():
+    proxima = request.args.get('proxima')
+    return render_template('agrotoxicos.html', agrotoxicos=listaagro)
 
 
 @app.route('/novo')
@@ -66,10 +68,12 @@ def autenticar():
             session['usuario_logado'] = usuario.id
             flash(usuario.nome + ' logou com sucesso!')
             proxima_pagina = request.form['proxima']
+            if usuario.cargo == '3':
+                return render_template('home.html', titulo=usuario.nome,  Produtos=produtos, usuario=usuario, empresa=empresas)
             if usuario.cargo == '2':
-                return render_template('home.html', titulo=usuario.nome,  Produtos=lista, usuario=usuario, empresa=empresas)
+                return render_template('home.html', titulo=usuario.nome,  Produtos=produtos, usuario=usuario, empresa=empresas)
             if usuario.cargo == '1':
-                return render_template('home.html', titulo=usuario.nome,  Produtos=lista, usuario=usuario, empresa=empresas)
+                return render_template('home.html', titulo=usuario.nome,  Produtos=produtos, usuario=usuario, empresa=empresas)
         return redirect(proxima_pagina)
     else:
         flash('Não logado, tente novamente!')

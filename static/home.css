@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
 * {
-  margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -19,6 +18,10 @@ nav {
   justify-content: space-between;
   padding: 0 50px 0 100px;
   flex-wrap: wrap;
+}
+
+.fixado{
+  position: fixed;
 }
 
 nav .logo {
@@ -60,6 +63,10 @@ nav .menu-btn i {
 
 input[type="checkbox"] {
   display: none;
+}
+
+.color-icon{
+  color:#fff;
 }
 
 @media (max-width: 1000px) {
@@ -115,13 +122,19 @@ input[type="checkbox"] {
 }
 
 .content { 
-  top: 0%;
-  left: 20%;
   text-align: center;
-  z-index: -1;
   width: 100%;
-  padding: 0 30px;
+  padding: 0px 30px;
   color: #1b1b1b;
+}
+
+.separador{
+  padding: 20px 0px;
+  width: 80%;
+  margin: 0% 10%;
+  border-width: 1cm;
+  border-bottom: solid;
+  border-color: #000000;
 }
 
 .content div {
@@ -141,24 +154,21 @@ input[type="checkbox"] {
 }
 
 .lista_produtos {
-  top: 178%;
-  left: 59%;
   text-align: center;
-  
-  text-size-adjust: 20px;
-  width: 100%;
-  padding: 0 30px;
+  width: 40%;
+  margin: 0% 30%;
   color: #1b1b1b;
 }
 
+.title-table{
+  border-width: 2px;
+  border-bottom: solid;
+  border-color: rgb(0, 0, 0);
+}
+
 .produtora {
-  display: inline;
-  justify-content: space-between;
-  top: 15%;
-  left: 50%;
-  text-align: left;
-  z-index: -1;
-  width: 100%;
+  display: block;
+  text-align: center;
   padding: 0 30px;
   color: #000000;
   
@@ -184,23 +194,19 @@ input[type="checkbox"] {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 40px;
 }
 .card {
   position: relative;
-  width: 320px;
+  width: 16%;
   height: 450px;
-  margin: 30px;
-  background: #287bff;
+  margin: 15px;
   border-radius: 28px;
   border-bottom-left-radius: 160px;
   border-bottom-right-radius: 160px;
-  box-shadow: 0 15px 0 #fff, inset 0 -15px 0 rgba(255, 255, 255, 0.25),
-    0 45px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 -15px 0 #fff, inset 0 0 rgb(255 255 255 / 25%), 0 15px 0 rgb(0 0 0 / 15%);
   overflow: hidden;
-  display: inline-flex;
+  display: inline;
   justify-content: center;
-  
 }
 
 .card::before {
@@ -215,20 +221,20 @@ input[type="checkbox"] {
   filter: blur(5px);
 }
 .card:nth-child(1) {
-  background: linear-gradient(to bottom, #020500, #07550e);
+  background: linear-gradient(to bottom, #020500, #448289);
 }
 
 .card:nth-child(2) {
-  background: linear-gradient(to bottom, #020500, #07550e);
+  background: linear-gradient(to bottom, #020500, #448289);
 }
 .card:nth-child(3) {
-  background: linear-gradient(to bottom, #020500, #07550e);
+  background: linear-gradient(to bottom, #020500, #448289);
 }
 .card:nth-child(4) {
-  background: linear-gradient(to bottom, #020500, #07550e);
+  background: linear-gradient(to bottom, #020500, #448289);
 }
 .card:nth-child(5) {
-  background: linear-gradient(to bottom, #020500, #07550e);
+  background: linear-gradient(to bottom, #020500, #448289);
 }
 
 .icon {
@@ -239,7 +245,7 @@ input[type="checkbox"] {
   background: #000000;
   border-bottom-left-radius: 100px;
   border-bottom-right-radius: 100px;
-
+  margin-top: 10px;
   box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1) inset 0 -8px 0 #fff;
   z-index: 1000;
   justify-content: center;
@@ -256,7 +262,6 @@ input[type="checkbox"] {
 .content_card {
   width: 100%;
   padding: 30px;
-  padding-top: 140px;
   text-align: center;
 }
 

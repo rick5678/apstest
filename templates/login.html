@@ -14,10 +14,10 @@
 
 <body>
     <section class="side">
-        <img src="./images/img.svg" alt="">
+        <img src="./../background.jpg" alt="">
     </section>
 
-    <section class="main">
+    <section class="main bg-image">
         <div class="login-container">
             {% with messages = get_flashed_messages() %}
             {% if messages %}
@@ -33,7 +33,7 @@
             <p class="welcome-message">Por favor, faça o login para acessa o painel</p>
             <form class="login-form" method="POST" action="{{ url_for('autenticar') }}">
                 <div class="form-control">
-                    <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
+                    <input type="hidden" name="proxima">
                     <input type="text" placeholder="Username" name="usuario">
                     <i class="fas fa-user"></i>
                 </div>
